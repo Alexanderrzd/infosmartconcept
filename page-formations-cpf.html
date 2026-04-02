@@ -1,0 +1,548 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+  .sc-cpf * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  .sc-cpf {
+    font-family: 'Inter', sans-serif;
+    color: #1e293b;
+    line-height: 1.6;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* ── NAV ── */
+  .sc-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 24px;
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+
+  .sc-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+  }
+
+  .sc-logo-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #0f172a, #1e3a5f);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: 900;
+    font-size: 20px;
+  }
+
+  .sc-logo-text {
+    font-size: 22px;
+    font-weight: 800;
+    color: #0f172a;
+  }
+
+  .sc-logo-text span { color: #2563eb; }
+
+  .sc-nav-links {
+    display: flex;
+    gap: 32px;
+    list-style: none;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .sc-nav-links a {
+    text-decoration: none;
+    color: #475569;
+    font-weight: 600;
+    font-size: 15px;
+    transition: color 0.2s;
+  }
+
+  .sc-nav-links a:hover { color: #2563eb; }
+
+  .sc-nav-cta {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: #fff !important;
+    padding: 10px 24px;
+    border-radius: 10px;
+  }
+
+  /* ── HERO ── */
+  .sc-cpf-hero {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a5f 50%, #2563eb 100%);
+    color: #fff;
+    padding: 70px 40px;
+    border-radius: 20px;
+    margin: 0 16px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .sc-cpf-hero::before {
+    content: '';
+    position: absolute;
+    top: -40%;
+    right: -15%;
+    width: 500px;
+    height: 500px;
+    background: rgba(59,130,246,0.12);
+    border-radius: 50%;
+  }
+
+  .sc-cpf-hero h1 {
+    font-size: 44px;
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 16px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .sc-cpf-hero p {
+    font-size: 18px;
+    opacity: 0.85;
+    max-width: 640px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+  }
+
+  .sc-cpf-hero-badges {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+
+  .sc-cpf-hero-badge {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+
+  /* ── SECTION ── */
+  .sc-cpf-section {
+    padding: 70px 20px;
+  }
+
+  .sc-cpf-section-title {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .sc-cpf-section-title h2 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 12px;
+  }
+
+  .sc-cpf-section-title .sc-line {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #2563eb, #3b82f6);
+    border-radius: 2px;
+    margin: 0 auto 16px;
+  }
+
+  .sc-cpf-section-title p {
+    font-size: 16px;
+    color: #64748b;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  /* ── FORMATION CARDS ── */
+  .sc-cpf-cards {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+  }
+
+  .sc-cpf-card {
+    display: grid;
+    grid-template-columns: 8px 1fr auto;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    overflow: hidden;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .sc-cpf-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 48px rgba(0,0,0,0.08);
+  }
+
+  .sc-cpf-card-bar { border-radius: 18px 0 0 18px; }
+  .sc-cpf-card-bar.blue { background: linear-gradient(180deg, #1e3a5f, #3b82f6); }
+  .sc-cpf-card-bar.purple { background: linear-gradient(180deg, #7c3aed, #c084fc); }
+  .sc-cpf-card-bar.green { background: linear-gradient(180deg, #059669, #34d399); }
+  .sc-cpf-card-bar.rose { background: linear-gradient(180deg, #e11d48, #fb7185); }
+
+  .sc-cpf-card-content {
+    padding: 32px 28px;
+  }
+
+  .sc-cpf-card-badge {
+    display: inline-block;
+    padding: 4px 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+  }
+
+  .sc-cpf-card-badge.blue { background: #eff6ff; color: #2563eb; }
+  .sc-cpf-card-badge.purple { background: #faf5ff; color: #7c3aed; }
+  .sc-cpf-card-badge.green { background: #ecfdf5; color: #059669; }
+  .sc-cpf-card-badge.rose { background: #fff1f2; color: #e11d48; }
+
+  .sc-cpf-card h3 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 12px;
+    line-height: 1.3;
+  }
+
+  .sc-cpf-card p {
+    font-size: 15px;
+    color: #475569;
+    line-height: 1.7;
+    margin-bottom: 16px;
+  }
+
+  .sc-cpf-card-tags {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+
+  .sc-cpf-card-tag {
+    font-size: 12px;
+    font-weight: 600;
+    padding: 4px 12px;
+    background: #f1f5f9;
+    color: #475569;
+    border-radius: 6px;
+  }
+
+  .sc-cpf-card-action {
+    display: flex;
+    align-items: center;
+    padding: 0 32px;
+  }
+
+  .sc-cpf-card-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    background: #f1f5f9;
+    border-radius: 14px;
+    font-size: 22px;
+    color: #475569;
+    transition: background 0.2s, color 0.2s;
+    text-decoration: none;
+  }
+
+  .sc-cpf-card:hover .sc-cpf-card-btn {
+    background: #2563eb;
+    color: #fff;
+  }
+
+  /* ── CPF EXPLIQUE ── */
+  .sc-cpf-explain {
+    background: #f8fafc;
+    border-radius: 20px;
+    padding: 48px 40px;
+    margin: 0 16px;
+  }
+
+  .sc-cpf-explain-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .sc-cpf-step {
+    text-align: center;
+    padding: 24px;
+  }
+
+  .sc-cpf-step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: #fff;
+    font-weight: 900;
+    font-size: 20px;
+    border-radius: 14px;
+    margin-bottom: 16px;
+  }
+
+  .sc-cpf-step h4 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #0f172a;
+    margin-bottom: 8px;
+  }
+
+  .sc-cpf-step p {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.5;
+  }
+
+  /* ── FOOTER ── */
+  .sc-footer {
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid #e2e8f0;
+    margin-top: 60px;
+  }
+
+  .sc-footer-logo {
+    font-size: 20px;
+    font-weight: 800;
+    color: #0f172a;
+    margin-bottom: 8px;
+  }
+
+  .sc-footer-logo span { color: #2563eb; }
+
+  .sc-footer p {
+    font-size: 14px;
+    color: #94a3b8;
+    margin-bottom: 4px;
+  }
+
+  .sc-footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+
+  .sc-footer-links a {
+    font-size: 14px;
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .sc-footer-links a:hover { color: #2563eb; }
+
+  @media (max-width: 768px) {
+    .sc-cpf-hero { padding: 50px 24px; margin: 0 8px; }
+    .sc-cpf-hero h1 { font-size: 30px; }
+    .sc-cpf-card { grid-template-columns: 6px 1fr; }
+    .sc-cpf-card-action { display: none; }
+    .sc-cpf-section { padding: 50px 16px; }
+    .sc-nav-links { gap: 16px; }
+    .sc-cpf-explain { padding: 32px 20px; margin: 0 8px; }
+  }
+</style>
+
+<div class="sc-cpf">
+
+  <!-- NAV -->
+  <nav class="sc-nav">
+    <a href="accueil.html" class="sc-logo">
+      <div class="sc-logo-icon">SC</div>
+      <div class="sc-logo-text">Smart <span>Concept</span></div>
+    </a>
+    <ul class="sc-nav-links">
+      <li><a href="accueil.html">Accueil</a></li>
+      <li><a href="page-formations-cpf.html">Nos formations</a></li>
+      <li><a href="accueil.html#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <div class="sc-cpf-hero">
+    <h1>Nos formations &eacute;ligibles CPF</h1>
+    <p>
+      D&eacute;couvrez nos 4 parcours certifiants pour cr&eacute;er, g&eacute;rer et d&eacute;velopper
+      votre activit&eacute;. Financez-les avec votre Compte Personnel de Formation.
+    </p>
+    <div class="sc-cpf-hero-badges">
+      <span class="sc-cpf-hero-badge">&#127891; Certifications RS</span>
+      <span class="sc-cpf-hero-badge">&#128176; 100% CPF</span>
+      <span class="sc-cpf-hero-badge">&#127942; Qualiopi</span>
+    </div>
+  </div>
+
+  <!-- FORMATIONS LIST -->
+  <div class="sc-cpf-section">
+    <div class="sc-cpf-section-title">
+      <div class="sc-line"></div>
+      <h2>Choisissez votre formation</h2>
+      <p>Cliquez sur une formation pour d&eacute;couvrir le programme complet</p>
+    </div>
+
+    <div class="sc-cpf-cards">
+
+      <!-- 1 - Micro-entreprise -->
+      <a href="formation-micro-entreprise.html" class="sc-cpf-card">
+        <div class="sc-cpf-card-bar blue"></div>
+        <div class="sc-cpf-card-content">
+          <div class="sc-cpf-card-badge blue">RS7005 &bull; Cr&eacute;Actifs</div>
+          <h3>Conduire un projet de cr&eacute;ation de micro-entreprise</h3>
+          <p>
+            De l&rsquo;id&eacute;e au lancement&nbsp;: ma&icirc;trisez le juridique, la fiscalit&eacute;,
+            les d&eacute;clarations, les aides, le marketing et r&eacute;digez votre business plan simplifi&eacute;.
+            8 modules pour devenir micro-entrepreneur en toute s&eacute;r&eacute;nit&eacute;.
+          </p>
+          <div class="sc-cpf-card-tags">
+            <span class="sc-cpf-card-tag">8 modules</span>
+            <span class="sc-cpf-card-tag">Parcours mixte</span>
+            <span class="sc-cpf-card-tag">Cr&eacute;ation d&rsquo;entreprise</span>
+          </div>
+        </div>
+        <div class="sc-cpf-card-action">
+          <div class="sc-cpf-card-btn">&#8594;</div>
+        </div>
+      </a>
+
+      <!-- 2 - Site internet -->
+      <a href="formation-site-internet-cms.html" class="sc-cpf-card">
+        <div class="sc-cpf-card-bar purple"></div>
+        <div class="sc-cpf-card-content">
+          <div class="sc-cpf-card-badge purple">RS6685 &bull; Cr&eacute;Actifs</div>
+          <h3>Cr&eacute;er et g&eacute;rer le site internet de sa TPE avec un CMS</h3>
+          <p>
+            Concevez un site professionnel sans coder avec WordPress et Elementor.
+            Design, e-commerce (WooCommerce), blog, SEO et performances&nbsp;:
+            3 modules pour devenir 100&nbsp;% autonome sur votre pr&eacute;sence en ligne.
+          </p>
+          <div class="sc-cpf-card-tags">
+            <span class="sc-cpf-card-tag">3 modules</span>
+            <span class="sc-cpf-card-tag">Parcours mixte</span>
+            <span class="sc-cpf-card-tag">Professionnalisation</span>
+          </div>
+        </div>
+        <div class="sc-cpf-card-action">
+          <div class="sc-cpf-card-btn">&#8594;</div>
+        </div>
+      </a>
+
+      <!-- 3 - Création d'entreprise -->
+      <a href="formation-creation-entreprise.html" class="sc-cpf-card">
+        <div class="sc-cpf-card-bar green"></div>
+        <div class="sc-cpf-card-content">
+          <div class="sc-cpf-card-badge green">RS7004 &bull; Qualiopi</div>
+          <h3>Conduire un projet de cr&eacute;ation d&rsquo;entreprise</h3>
+          <p>
+            Le parcours complet du cr&eacute;ateur&nbsp;: coh&eacute;rence du projet, &eacute;tude de march&eacute;,
+            business model, statut juridique, pr&eacute;visionnel financier, communication, aides,
+            pitch et immatriculation. 9 modules pour un lancement s&eacute;curis&eacute;.
+          </p>
+          <div class="sc-cpf-card-tags">
+            <span class="sc-cpf-card-tag">9 modules</span>
+            <span class="sc-cpf-card-tag">Modularis&eacute;</span>
+            <span class="sc-cpf-card-tag">Cr&eacute;ation d&rsquo;entreprise</span>
+          </div>
+        </div>
+        <div class="sc-cpf-card-action">
+          <div class="sc-cpf-card-btn">&#8594;</div>
+        </div>
+      </a>
+
+      <!-- 4 - Réseaux sociaux -->
+      <a href="formation-reseaux-sociaux.html" class="sc-cpf-card">
+        <div class="sc-cpf-card-bar rose"></div>
+        <div class="sc-cpf-card-content">
+          <div class="sc-cpf-card-badge rose">Certification &bull; Cr&eacute;Actifs</div>
+          <h3>Communiquer sur les r&eacute;seaux sociaux pour promouvoir sa TPE</h3>
+          <p>
+            Ma&icirc;trisez Instagram, LinkedIn, Facebook et TikTok de A &agrave; Z.
+            Strat&eacute;gie &eacute;ditoriale, cr&eacute;ation de contenus, publicit&eacute; et e-r&eacute;putation&nbsp;:
+            5 modules pour transformer votre pr&eacute;sence digitale en levier de croissance.
+          </p>
+          <div class="sc-cpf-card-tags">
+            <span class="sc-cpf-card-tag">5 modules</span>
+            <span class="sc-cpf-card-tag">Parcours mixte</span>
+            <span class="sc-cpf-card-tag">Certification</span>
+          </div>
+        </div>
+        <div class="sc-cpf-card-action">
+          <div class="sc-cpf-card-btn">&#8594;</div>
+        </div>
+      </a>
+
+    </div>
+  </div>
+
+  <!-- COMMENT UTILISER SON CPF -->
+  <div class="sc-cpf-explain">
+    <div class="sc-cpf-section-title" style="margin-bottom: 40px;">
+      <div class="sc-line"></div>
+      <h2>Comment utiliser votre CPF&nbsp;?</h2>
+      <p>4 &eacute;tapes simples pour financer votre formation</p>
+    </div>
+
+    <div class="sc-cpf-explain-grid">
+      <div class="sc-cpf-step">
+        <div class="sc-cpf-step-num">1</div>
+        <h4>Cr&eacute;ez votre compte</h4>
+        <p>Rendez-vous sur moncompteformation.gouv.fr et cr&eacute;ez votre espace personnel.</p>
+      </div>
+      <div class="sc-cpf-step">
+        <div class="sc-cpf-step-num">2</div>
+        <h4>Consultez vos droits</h4>
+        <p>V&eacute;rifiez le montant disponible sur votre Compte Personnel de Formation.</p>
+      </div>
+      <div class="sc-cpf-step">
+        <div class="sc-cpf-step-num">3</div>
+        <h4>Choisissez votre formation</h4>
+        <p>S&eacute;lectionnez la formation Smart Concept qui correspond &agrave; votre projet.</p>
+      </div>
+      <div class="sc-cpf-step">
+        <div class="sc-cpf-step-num">4</div>
+        <h4>Inscrivez-vous</h4>
+        <p>Validez votre inscription et commencez votre parcours d&rsquo;apprentissage.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="sc-footer">
+    <div class="sc-footer-logo">Smart <span>Concept</span></div>
+    <p>Organisme de formation certifi&eacute; Qualiopi</p>
+    <p>&copy; 2025 Smart Concept. Tous droits r&eacute;serv&eacute;s.</p>
+    <div class="sc-footer-links">
+      <a href="accueil.html">Accueil</a>
+      <a href="page-formations-cpf.html">Nos formations</a>
+      <a href="accueil.html#contact">Contact</a>
+      <a href="#">Mentions l&eacute;gales</a>
+    </div>
+  </footer>
+
+</div>

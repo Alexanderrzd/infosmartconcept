@@ -1,0 +1,739 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+  .lp-social * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .lp-social {
+    font-family: 'Inter', sans-serif;
+    color: #1e293b;
+    line-height: 1.6;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .lp-hero {
+    background: linear-gradient(135deg, #be123c 0%, #e11d48 50%, #fb7185 100%);
+    color: #fff;
+    padding: 80px 40px;
+    border-radius: 16px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0;
+  }
+
+  .lp-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 500px;
+    height: 500px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+  }
+
+  .lp-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 350px;
+    height: 350px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50%;
+  }
+
+  .lp-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .lp-hero h1 {
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .lp-hero-sub {
+    font-size: 18px;
+    opacity: 0.9;
+    max-width: 720px;
+    margin: 0 auto 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .lp-hero-tags {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+
+  .lp-hero-tag {
+    background: rgba(255,255,255,0.12);
+    padding: 6px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .lp-certif-banner {
+    background: linear-gradient(90deg, #fff1f2, #ffe4e6);
+    border-left: 5px solid #e11d48;
+    padding: 28px 32px;
+    margin: 40px 20px;
+    border-radius: 0 12px 12px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .lp-certif-icon {
+    font-size: 36px;
+    flex-shrink: 0;
+  }
+
+  .lp-certif-banner h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #9f1239;
+    margin-bottom: 6px;
+  }
+
+  .lp-certif-banner p {
+    font-size: 15px;
+    color: #334155;
+  }
+
+  .lp-section {
+    padding: 60px 20px;
+  }
+
+  .lp-section-title {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .lp-section-title h2 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 12px;
+  }
+
+  .lp-section-title .lp-line {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #e11d48, #fb7185);
+    border-radius: 2px;
+    margin: 0 auto 16px;
+  }
+
+  .lp-section-title p {
+    font-size: 16px;
+    color: #64748b;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .lp-obj-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+  }
+
+  .lp-obj-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 28px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .lp-obj-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(225, 29, 72, 0.1);
+  }
+
+  .lp-obj-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #e11d48, #fb7185);
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+  }
+
+  .lp-obj-card h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1.4;
+  }
+
+  .lp-modules-bg {
+    background: #fff1f2;
+    border-radius: 16px;
+    padding: 60px 20px;
+  }
+
+  .lp-modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .lp-module {
+    background: #fff;
+    border-radius: 14px;
+    padding: 28px;
+    border: 1px solid #e2e8f0;
+    transition: box-shadow 0.2s;
+  }
+
+  .lp-module:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  }
+
+  .lp-module-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+
+  .lp-module-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, #e11d48, #fb7185);
+    color: #fff;
+    font-weight: 800;
+    font-size: 14px;
+    border-radius: 12px;
+    padding: 0 4px;
+  }
+
+  .lp-module-header h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1.3;
+  }
+
+  .lp-module ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .lp-module li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.5;
+  }
+
+  .lp-module li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    background: #fb7185;
+    border-radius: 50%;
+    opacity: 0.5;
+  }
+
+  .lp-comp-list {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .lp-comp-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .lp-comp-item:last-child {
+    border-bottom: none;
+  }
+
+  .lp-comp-check {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: #fff1f2;
+    color: #e11d48;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 2px;
+  }
+
+  .lp-comp-item p {
+    font-size: 15px;
+    color: #334155;
+    line-height: 1.6;
+  }
+
+  .lp-eval-box {
+    background: linear-gradient(135deg, #fefce8, #fef9c3);
+    border: 1px solid #fde68a;
+    border-radius: 14px;
+    padding: 32px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .lp-eval-box .lp-eval-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+  }
+
+  .lp-eval-box h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #92400e;
+    margin-bottom: 12px;
+  }
+
+  .lp-eval-box p {
+    font-size: 15px;
+    color: #78350f;
+    line-height: 1.7;
+  }
+
+  /* PLATEFORMES */
+  .lp-platforms {
+    display: flex;
+    justify-content: center;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin: 48px auto 0;
+    max-width: 700px;
+  }
+
+  .lp-platform {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    padding: 14px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #1e293b;
+    transition: box-shadow 0.2s;
+  }
+
+  .lp-platform:hover {
+    box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+  }
+
+  .lp-platform-icon {
+    font-size: 24px;
+  }
+
+  .lp-strong-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .lp-strong-card {
+    text-align: center;
+    padding: 32px 24px;
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .lp-strong-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(225, 29, 72, 0.08);
+  }
+
+  .lp-strong-icon {
+    font-size: 36px;
+    margin-bottom: 16px;
+  }
+
+  .lp-strong-card h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+  }
+
+  .lp-strong-card p {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.5;
+  }
+
+  .lp-cta {
+    background: linear-gradient(135deg, #9f1239 0%, #e11d48 100%);
+    color: #fff;
+    text-align: center;
+    padding: 60px 40px;
+    border-radius: 16px;
+    margin: 20px 20px 40px;
+  }
+
+  .lp-cta h2 {
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 16px;
+  }
+
+  .lp-cta p {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 32px;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .lp-cta-btn {
+    display: inline-block;
+    background: #fff;
+    color: #e11d48;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 16px 40px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .lp-cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    color: #9f1239;
+  }
+
+  .lp-parcours-tag {
+    display: inline-block;
+    margin-top: 20px;
+    background: rgba(255,255,255,0.15);
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .lp-hero { padding: 50px 24px; }
+    .lp-hero h1 { font-size: 28px; }
+    .lp-hero-sub { font-size: 16px; }
+    .lp-section { padding: 40px 16px; }
+    .lp-section-title h2 { font-size: 26px; }
+    .lp-modules-grid { grid-template-columns: 1fr; }
+    .lp-obj-grid { grid-template-columns: 1fr; }
+    .lp-certif-banner { flex-direction: column; margin: 24px 16px; }
+    .lp-cta { padding: 40px 24px; margin: 20px 16px 40px; }
+    .lp-cta h2 { font-size: 24px; }
+  }
+</style>
+
+<div class="lp-social">
+
+  <!-- NAV -->
+  <nav style="display:flex;align-items:center;justify-content:space-between;padding:20px 24px;flex-wrap:wrap;gap:16px;">
+    <a href="accueil.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;">
+      <div style="width:44px;height:44px;background:linear-gradient(135deg,#0f172a,#1e3a5f);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:18px;">SC</div>
+      <div style="font-size:20px;font-weight:800;color:#0f172a;">Smart <span style="color:#2563eb;">Concept</span></div>
+    </a>
+    <div style="display:flex;gap:24px;align-items:center;flex-wrap:wrap;">
+      <a href="accueil.html" style="text-decoration:none;color:#475569;font-weight:600;font-size:15px;">Accueil</a>
+      <a href="page-formations-cpf.html" style="text-decoration:none;color:#475569;font-weight:600;font-size:15px;">Nos formations</a>
+      <a href="accueil.html#contact" style="text-decoration:none;color:#475569;font-weight:600;font-size:15px;">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="lp-hero">
+    <div class="lp-badge">Formation certifiante</div>
+    <h1>Communiquer sur les r&eacute;seaux sociaux<br>pour promouvoir sa TPE</h1>
+    <p class="lp-hero-sub">
+      Ma&icirc;trisez Instagram, LinkedIn, Facebook et TikTok pour attirer vos clients,
+      d&eacute;velopper votre visibilit&eacute; et booster votre chiffre d&rsquo;affaires.
+    </p>
+    <div class="lp-hero-tags">
+      <span class="lp-hero-tag">Parcours mixte &amp; individualis&eacute;</span>
+      <span class="lp-hero-tag">Certification Cr&eacute;Actifs</span>
+      <span class="lp-hero-tag">&Eacute;ligible CPF</span>
+    </div>
+  </div>
+
+  <!-- CERTIFICATION BANNER -->
+  <div class="lp-certif-banner">
+    <div class="lp-certif-icon">&#127891;</div>
+    <div>
+      <h3>Certification reconnue &mdash; Cr&eacute;Actifs</h3>
+      <p>
+        Certification &laquo;&nbsp;Communiquer sur les r&eacute;seaux sociaux pour promouvoir sa TPE&nbsp;&raquo;
+        enregistr&eacute;e au R&eacute;pertoire Sp&eacute;cifique par France Comp&eacute;tences
+        et d&eacute;livr&eacute;e par Cr&eacute;Actifs.
+      </p>
+    </div>
+  </div>
+
+  <!-- OBJECTIF PEDAGOGIQUE -->
+  <div class="lp-section">
+    <div class="lp-section-title">
+      <div class="lp-line"></div>
+      <h2>Objectifs p&eacute;dagogiques</h2>
+      <p>Ce que vous ma&icirc;triserez &agrave; l&rsquo;issue de la formation</p>
+    </div>
+    <div class="lp-obj-grid">
+      <div class="lp-obj-card">
+        <div class="lp-obj-num">1</div>
+        <h4>D&eacute;terminer sa strat&eacute;gie de communication sur les r&eacute;seaux sociaux</h4>
+      </div>
+      <div class="lp-obj-card">
+        <div class="lp-obj-num">2</div>
+        <h4>Identifier les r&eacute;seaux sociaux les plus adapt&eacute;s &agrave; son activit&eacute;</h4>
+      </div>
+      <div class="lp-obj-card">
+        <div class="lp-obj-num">3</div>
+        <h4>Cr&eacute;er et param&eacute;trer une page entreprise professionnelle</h4>
+      </div>
+      <div class="lp-obj-card">
+        <div class="lp-obj-num">4</div>
+        <h4>&Eacute;laborer et mettre en place une strat&eacute;gie &eacute;ditoriale coh&eacute;rente</h4>
+      </div>
+      <div class="lp-obj-card">
+        <div class="lp-obj-num">5</div>
+        <h4>Animer ses pages avec du contenu engageant et accessible</h4>
+      </div>
+      <div class="lp-obj-card">
+        <div class="lp-obj-num">6</div>
+        <h4>Cultiver sa e-r&eacute;putation et g&eacute;rer la publicit&eacute; en ligne</h4>
+      </div>
+    </div>
+
+    <!-- PLATEFORMES -->
+    <div class="lp-platforms">
+      <div class="lp-platform">
+        <span class="lp-platform-icon">&#128247;</span> Instagram
+      </div>
+      <div class="lp-platform">
+        <span class="lp-platform-icon">&#128188;</span> LinkedIn
+      </div>
+      <div class="lp-platform">
+        <span class="lp-platform-icon">&#128077;</span> Facebook
+      </div>
+      <div class="lp-platform">
+        <span class="lp-platform-icon">&#127916;</span> TikTok
+      </div>
+    </div>
+  </div>
+
+  <!-- PROGRAMME -->
+  <div class="lp-modules-bg">
+    <div class="lp-section-title">
+      <div class="lp-line"></div>
+      <h2>Programme de la formation</h2>
+      <p>5 modules pour devenir autonome sur chaque plateforme</p>
+    </div>
+
+    <div class="lp-modules-grid">
+      <div class="lp-module">
+        <div class="lp-module-header">
+          <div class="lp-module-number">M1</div>
+          <h4>Fondamentaux des r&eacute;seaux sociaux</h4>
+        </div>
+        <ul>
+          <li>Introduction au marketing social (SEM &amp; SMO)</li>
+          <li>Identifier ses cibles et d&eacute;finir son persona</li>
+          <li>D&eacute;finir ses objectifs et son budget</li>
+          <li>Cr&eacute;er son identit&eacute; visuelle et sa charte graphique</li>
+          <li>Calendrier &eacute;ditorial et outils de community management</li>
+        </ul>
+      </div>
+
+      <div class="lp-module">
+        <div class="lp-module-header">
+          <div class="lp-module-number">M2</div>
+          <h4>Instagram &mdash; Engagement</h4>
+        </div>
+        <ul>
+          <li>Configurer et optimiser son compte pro</li>
+          <li>Comprendre et exploiter l&rsquo;algorithme</li>
+          <li>Publications, stories, carrousels, reels</li>
+          <li>Accro&icirc;tre sa visibilit&eacute; et fid&eacute;liser son audience</li>
+          <li>Publicit&eacute; et campagnes efficaces</li>
+          <li>Collaboration avec des influenceurs</li>
+        </ul>
+      </div>
+
+      <div class="lp-module">
+        <div class="lp-module-header">
+          <div class="lp-module-number">M3</div>
+          <h4>LinkedIn &mdash; R&eacute;seau pro</h4>
+        </div>
+        <ul>
+          <li>Cr&eacute;er et optimiser son profil</li>
+          <li>Construire et d&eacute;velopper son r&eacute;seau</li>
+          <li>Comprendre l&rsquo;algorithme LinkedIn</li>
+          <li>Types et r&egrave;gles des posts performants</li>
+          <li>Strat&eacute;gie &eacute;ditoriale engageante</li>
+          <li>Outils de prospection (Sales Navigator, Walaaxy&hellip;)</li>
+        </ul>
+      </div>
+
+      <div class="lp-module">
+        <div class="lp-module-header">
+          <div class="lp-module-number">M4</div>
+          <h4>Facebook &mdash; Port&eacute;e maximale</h4>
+        </div>
+        <ul>
+          <li>Compr&eacute;hension de la plateforme et de son algorithme</li>
+          <li>Cr&eacute;er et configurer une page avec Meta Business Suite</li>
+          <li>Posts, vid&eacute;os, groupes, &eacute;v&eacute;nements, boutiques, lives</li>
+          <li>Suivi des statistiques et ajustement strat&eacute;gique</li>
+          <li>Campagnes publicitaires avec le gestionnaire Meta</li>
+        </ul>
+      </div>
+
+      <div class="lp-module">
+        <div class="lp-module-header">
+          <div class="lp-module-number">M5</div>
+          <h4>TikTok &mdash; Viralit&eacute;</h4>
+        </div>
+        <ul>
+          <li>Fonctionnalit&eacute;s et ciblage TikTok</li>
+          <li>Cr&eacute;er et optimiser son profil</li>
+          <li>Vid&eacute;os efficaces, challenges, lives et stories</li>
+          <li>Strat&eacute;gie &eacute;ditoriale&nbsp;: fr&eacute;quence et timing optimal</li>
+          <li>TikTok for Business&nbsp;: publicit&eacute;s, pixels, ench&egrave;res</li>
+          <li>Influence, co-marketing et recrutement</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPETENCES -->
+  <div class="lp-section">
+    <div class="lp-section-title">
+      <div class="lp-line"></div>
+      <h2>Comp&eacute;tences vis&eacute;es par la certification</h2>
+      <p>Les savoir-faire que vous serez en mesure de d&eacute;montrer</p>
+    </div>
+
+    <div class="lp-comp-list">
+      <div class="lp-comp-item">
+        <div class="lp-comp-check">&#10003;</div>
+        <p><strong>D&eacute;finir une strat&eacute;gie r&eacute;seaux sociaux</strong> &mdash; adapt&eacute;e aux ressources de la TPE, &agrave; son public cible et &agrave; ses objectifs commerciaux.</p>
+      </div>
+      <div class="lp-comp-item">
+        <div class="lp-comp-check">&#10003;</div>
+        <p><strong>S&eacute;lectionner les plateformes cibles</strong> &mdash; en comparant positionnements, audiences et pratiques concurrentielles.</p>
+      </div>
+      <div class="lp-comp-item">
+        <div class="lp-comp-check">&#10003;</div>
+        <p><strong>Cr&eacute;er et param&eacute;trer une page entreprise</strong> &mdash; exploiter les fonctionnalit&eacute;s de chaque plateforme et int&eacute;grer l&rsquo;identit&eacute; visuelle.</p>
+      </div>
+      <div class="lp-comp-item">
+        <div class="lp-comp-check">&#10003;</div>
+        <p><strong>&Eacute;laborer une strat&eacute;gie &eacute;ditoriale</strong> &mdash; planifier les actions et organiser une r&eacute;gularit&eacute; dans la ligne &eacute;ditoriale.</p>
+      </div>
+      <div class="lp-comp-item">
+        <div class="lp-comp-check">&#10003;</div>
+        <p><strong>Cr&eacute;er des contenus engageants</strong> &mdash; en s&rsquo;appuyant sur l&rsquo;IA g&eacute;n&eacute;rative et des outils de design, tout en garantissant l&rsquo;accessibilit&eacute;.</p>
+      </div>
+      <div class="lp-comp-item">
+        <div class="lp-comp-check">&#10003;</div>
+        <p><strong>Cultiver sa e-r&eacute;putation</strong> &mdash; publicit&eacute;s, gestion des avis et commentaires, gestion de crise, e-influence et suivi analytique.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- POINTS FORTS -->
+  <div class="lp-section" style="padding-top: 0;">
+    <div class="lp-section-title">
+      <div class="lp-line"></div>
+      <h2>Les points forts</h2>
+    </div>
+    <div class="lp-strong-grid">
+      <div class="lp-strong-card">
+        <div class="lp-strong-icon">&#127775;</div>
+        <h4>Formateurs experts</h4>
+        <p>Des sp&eacute;cialistes de chaque r&eacute;seau avec des r&eacute;sultats prouv&eacute;s et des process actuels.</p>
+      </div>
+      <div class="lp-strong-card">
+        <div class="lp-strong-icon">&#128241;</div>
+        <h4>4 r&eacute;seaux couverts</h4>
+        <p>Instagram, LinkedIn, Facebook et TikTok ma&icirc;tris&eacute;s de A &agrave; Z.</p>
+      </div>
+      <div class="lp-strong-card">
+        <div class="lp-strong-icon">&#128200;</div>
+        <h4>Strat&eacute;gie &amp; publicit&eacute;</h4>
+        <p>Ma&icirc;trisez les campagnes payantes et le marketing d&rsquo;influence.</p>
+      </div>
+      <div class="lp-strong-card">
+        <div class="lp-strong-icon">&#9989;</div>
+        <h4>Parcours certifiant</h4>
+        <p>Certification reconnue par France Comp&eacute;tences via Cr&eacute;Actifs.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="lp-cta">
+    <h2>Pr&ecirc;t &agrave; booster votre visibilit&eacute; en ligne&nbsp;?</h2>
+    <p>
+      Apprenez &agrave; communiquer efficacement sur les r&eacute;seaux sociaux
+      et transformez votre pr&eacute;sence digitale en levier de croissance.
+    </p>
+    <a href="https://www.moncompteformation.gouv.fr/espace-prive/html/#/formation/recherche/95368272100014_certif3/95368272100014_certif3?contexteFormation=ACTIVITE_PROFESSIONNELLE" target="_blank" rel="noopener noreferrer" class="lp-cta-btn">Je m&rsquo;inscris &agrave; la formation</a>
+    <div class="lp-parcours-tag">Parcours mixte : individualis&eacute; et modularis&eacute;</div>
+  </div>
+
+</div>

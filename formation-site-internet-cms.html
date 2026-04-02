@@ -1,0 +1,671 @@
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+  .lp-cms * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  .lp-cms {
+    font-family: 'Inter', sans-serif;
+    color: #1e293b;
+    line-height: 1.6;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .lp-hero {
+    background: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #c084fc 100%);
+    color: #fff;
+    padding: 80px 40px;
+    border-radius: 16px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 0;
+  }
+
+  .lp-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -20%;
+    width: 500px;
+    height: 500px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 50%;
+  }
+
+  .lp-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -30%;
+    left: -10%;
+    width: 350px;
+    height: 350px;
+    background: rgba(255,255,255,0.04);
+    border-radius: 50%;
+  }
+
+  .lp-badge {
+    display: inline-block;
+    background: rgba(255,255,255,0.15);
+    backdrop-filter: blur(10px);
+    padding: 8px 20px;
+    border-radius: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 24px;
+    border: 1px solid rgba(255,255,255,0.2);
+  }
+
+  .lp-hero h1 {
+    font-size: 42px;
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .lp-hero-sub {
+    font-size: 18px;
+    opacity: 0.9;
+    max-width: 720px;
+    margin: 0 auto 32px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .lp-hero-tags {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+  }
+
+  .lp-hero-tag {
+    background: rgba(255,255,255,0.12);
+    padding: 6px 16px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    border: 1px solid rgba(255,255,255,0.15);
+  }
+
+  .lp-certif-banner {
+    background: linear-gradient(90deg, #faf5ff, #f3e8ff);
+    border-left: 5px solid #7c3aed;
+    padding: 28px 32px;
+    margin: 40px 20px;
+    border-radius: 0 12px 12px 0;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .lp-certif-icon {
+    font-size: 36px;
+    flex-shrink: 0;
+  }
+
+  .lp-certif-banner h3 {
+    font-size: 18px;
+    font-weight: 700;
+    color: #5b21b6;
+    margin-bottom: 6px;
+  }
+
+  .lp-certif-banner p {
+    font-size: 15px;
+    color: #334155;
+  }
+
+  .lp-section {
+    padding: 60px 20px;
+  }
+
+  .lp-section-title {
+    text-align: center;
+    margin-bottom: 48px;
+  }
+
+  .lp-section-title h2 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 12px;
+  }
+
+  .lp-section-title .lp-line {
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #7c3aed, #a855f7);
+    border-radius: 2px;
+    margin: 0 auto 16px;
+  }
+
+  .lp-section-title p {
+    font-size: 16px;
+    color: #64748b;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .lp-obj-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+  }
+
+  .lp-obj-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 14px;
+    padding: 28px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .lp-obj-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(124, 58, 237, 0.1);
+  }
+
+  .lp-obj-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: linear-gradient(135deg, #7c3aed, #a855f7);
+    color: #fff;
+    font-weight: 700;
+    font-size: 16px;
+    border-radius: 10px;
+    margin-bottom: 16px;
+  }
+
+  .lp-obj-card h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1.4;
+  }
+
+  .lp-modules-bg {
+    background: #faf5ff;
+    border-radius: 16px;
+    padding: 60px 20px;
+  }
+
+  .lp-modules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .lp-module {
+    background: #fff;
+    border-radius: 14px;
+    padding: 28px;
+    border: 1px solid #e2e8f0;
+    transition: box-shadow 0.2s;
+  }
+
+  .lp-module:hover {
+    box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+  }
+
+  .lp-module-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 16px;
+  }
+
+  .lp-module-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 44px;
+    height: 44px;
+    background: linear-gradient(135deg, #7c3aed, #c084fc);
+    color: #fff;
+    font-weight: 800;
+    font-size: 14px;
+    border-radius: 12px;
+    padding: 0 4px;
+  }
+
+  .lp-module-header h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1.3;
+  }
+
+  .lp-module ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  .lp-module li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.5;
+  }
+
+  .lp-module li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    background: #a855f7;
+    border-radius: 50%;
+    opacity: 0.5;
+  }
+
+  .lp-comp-list {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .lp-comp-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    padding: 20px 0;
+    border-bottom: 1px solid #f1f5f9;
+  }
+
+  .lp-comp-item:last-child {
+    border-bottom: none;
+  }
+
+  .lp-comp-check {
+    flex-shrink: 0;
+    width: 32px;
+    height: 32px;
+    background: #f3e8ff;
+    color: #7c3aed;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 2px;
+  }
+
+  .lp-comp-item p {
+    font-size: 15px;
+    color: #334155;
+    line-height: 1.6;
+  }
+
+  .lp-eval-box {
+    background: linear-gradient(135deg, #fefce8, #fef9c3);
+    border: 1px solid #fde68a;
+    border-radius: 14px;
+    padding: 32px;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .lp-eval-box .lp-eval-icon {
+    font-size: 40px;
+    margin-bottom: 12px;
+  }
+
+  .lp-eval-box h3 {
+    font-size: 20px;
+    font-weight: 700;
+    color: #92400e;
+    margin-bottom: 12px;
+  }
+
+  .lp-eval-box p {
+    font-size: 15px;
+    color: #78350f;
+    line-height: 1.7;
+  }
+
+  .lp-strong-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .lp-strong-card {
+    text-align: center;
+    padding: 32px 24px;
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid #e2e8f0;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .lp-strong-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(124, 58, 237, 0.08);
+  }
+
+  .lp-strong-icon {
+    font-size: 36px;
+    margin-bottom: 16px;
+  }
+
+  .lp-strong-card h4 {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 8px;
+  }
+
+  .lp-strong-card p {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.5;
+  }
+
+  .lp-cta {
+    background: linear-gradient(135deg, #5b21b6 0%, #7c3aed 100%);
+    color: #fff;
+    text-align: center;
+    padding: 60px 40px;
+    border-radius: 16px;
+    margin: 20px 20px 40px;
+  }
+
+  .lp-cta h2 {
+    font-size: 30px;
+    font-weight: 800;
+    margin-bottom: 16px;
+  }
+
+  .lp-cta p {
+    font-size: 16px;
+    opacity: 0.9;
+    margin-bottom: 32px;
+    max-width: 560px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .lp-cta-btn {
+    display: inline-block;
+    background: #fff;
+    color: #7c3aed;
+    font-size: 17px;
+    font-weight: 700;
+    padding: 16px 40px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .lp-cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+    color: #5b21b6;
+  }
+
+  .lp-parcours-tag {
+    display: inline-block;
+    margin-top: 20px;
+    background: rgba(255,255,255,0.15);
+    padding: 8px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  @media (max-width: 768px) {
+    .lp-hero { padding: 50px 24px; }
+    .lp-hero h1 { font-size: 28px; }
+    .lp-hero-sub { font-size: 16px; }
+    .lp-section { padding: 40px 16px; }
+    .lp-section-title h2 { font-size: 26px; }
+    .lp-modules-grid { grid-template-columns: 1fr; }
+    .lp-obj-grid { grid-template-columns: 1fr; }
+    .lp-certif-banner { flex-direction: column; margin: 24px 16px; }
+    .lp-cta { padding: 40px 24px; margin: 20px 16px 40px; }
+    .lp-cta h2 { font-size: 24px; }
+  }
+</style>
+
+<div class="lp-cms">
+
+  <!-- NAV -->
+  <nav style="display:flex;align-items:center;justify-content:space-between;padding:20px 24px;flex-wrap:wrap;gap:16px;">
+    <a href="accueil.html" style="display:flex;align-items:center;gap:12px;text-decoration:none;">
+      <div style="width:44px;height:44px;background:linear-gradient(135deg,#0f172a,#1e3a5f);border-radius:12px;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:900;font-size:18px;">SC</div>
+      <div style="font-size:20px;font-weight:800;color:#0f172a;">Smart <span style="color:#2563eb;">Concept</span></div>
+    </a>
+    <div style="display:flex;gap:24px;align-items:center;flex-wrap:wrap;">
+      <a href="accueil.html" style="text-decoration:none;color:#475569;font-weight:600;font-size:15px;">Accueil</a>
+      <a href="page-formations-cpf.html" style="text-decoration:none;color:#475569;font-weight:600;font-size:15px;">Nos formations</a>
+      <a href="accueil.html#contact" style="text-decoration:none;color:#475569;font-weight:600;font-size:15px;">Contact</a>
+    </div>
+  </nav>
+
+  <!-- HERO -->
+  <div class="lp-hero">
+    <div class="lp-badge">Formation certifiante RS6685</div>
+    <h1>Cr&eacute;er et g&eacute;rer le site internet<br>de sa TPE avec un CMS</h1>
+    <p class="lp-hero-sub">
+      Concevez un site professionnel &agrave; votre image, sans coder.
+      Design, e-commerce, SEO&nbsp;: devenez 100&nbsp;% autonome sur votre pr&eacute;sence en ligne.
+    </p>
+    <div class="lp-hero-tags">
+      <span class="lp-hero-tag">Parcours mixte &amp; individualis&eacute;</span>
+      <span class="lp-hero-tag">Certification Cr&eacute;Actifs</span>
+      <span class="lp-hero-tag">&Eacute;ligible CPF</span>
+    </div>
+  </div>
+
+  <!-- CERTIFICATION BANNER -->
+  <div class="lp-certif-banner">
+    <div class="lp-certif-icon">&#127891;</div>
+    <div>
+      <h3>Certification reconnue &mdash; RS6685 Cr&eacute;Actifs</h3>
+      <p>
+        Certification &laquo;&nbsp;Cr&eacute;er et g&eacute;rer le site internet de sa TPE &agrave; l&rsquo;aide d&rsquo;un CMS&nbsp;&raquo;
+        enregistr&eacute;e au R&eacute;pertoire Sp&eacute;cifique (RS6685) par France Comp&eacute;tences
+        &mdash; valide jusqu&rsquo;au 27/06/2027.
+      </p>
+    </div>
+  </div>
+
+  <!-- OBJECTIF PEDAGOGIQUE -->
+  <div class="lp-section">
+    <div class="lp-section-title">
+      <div class="lp-line"></div>
+      <h2>Objectif p&eacute;dagogique</h2>
+      <p>Ce que vous saurez faire &agrave; l&rsquo;issue de la formation</p>
+    </div>
+    <div class="lp-obj-grid">
+      <div class="lp-obj-card">
+        <div class="lp-obj-num">1</div>
+        <h4>Concevoir un site internet professionnel sans coder, guid&eacute; pas &agrave; pas</h4>
+      </div>
+      <div class="lp-obj-card">
+        <div class="lp-obj-num">2</div>
+        <h4>Mettre en ligne un site fonctionnel et le faire &eacute;voluer selon vos besoins</h4>
+      </div>
+      <div class="lp-obj-card">
+        <div class="lp-obj-num">3</div>
+        <h4>Optimiser votre site pour attirer des visiteurs et g&eacute;n&eacute;rer des clients</h4>
+      </div>
+      <div class="lp-obj-card">
+        <div class="lp-obj-num">4</div>
+        <h4>Ma&icirc;triser les leviers cl&eacute;s&nbsp;: design, e-commerce, SEO et performances</h4>
+      </div>
+    </div>
+  </div>
+
+  <!-- PROGRAMME -->
+  <div class="lp-modules-bg">
+    <div class="lp-section-title">
+      <div class="lp-line"></div>
+      <h2>Programme de la formation</h2>
+      <p>3 modules pour passer de z&eacute;ro &agrave; un site pro op&eacute;rationnel</p>
+    </div>
+
+    <div class="lp-modules-grid">
+      <div class="lp-module">
+        <div class="lp-module-header">
+          <div class="lp-module-number">M1</div>
+          <h4>R&eacute;flexion, conception &amp; pr&eacute;paration</h4>
+        </div>
+        <ul>
+          <li>Faire le point sur votre projet et d&eacute;finir votre strat&eacute;gie Web</li>
+          <li>&Eacute;tablir votre cahier des charges</li>
+          <li>D&eacute;finir et configurer votre CMS, nom de domaine &amp; h&eacute;bergement</li>
+          <li>D&eacute;finir la structure du site et cr&eacute;er une maquette</li>
+        </ul>
+      </div>
+
+      <div class="lp-module">
+        <div class="lp-module-header">
+          <div class="lp-module-number">M2</div>
+          <h4>Construction de votre site internet</h4>
+        </div>
+        <ul>
+          <li>Cr&eacute;er un site design et fonctionnel avec Elementor</li>
+          <li>Optimiser le parcours client &amp; accessibilit&eacute; handicap</li>
+          <li>Cr&eacute;er et optimiser votre Blog</li>
+          <li>Adapter vos contenus &agrave; l&rsquo;actualit&eacute; de l&rsquo;entreprise</li>
+          <li>Configurer votre e-commerce (WooCommerce)</li>
+          <li>Ajouter des plug-ins&nbsp;: r&eacute;servation, prise de contact, etc.</li>
+        </ul>
+      </div>
+
+      <div class="lp-module">
+        <div class="lp-module-header">
+          <div class="lp-module-number">M3</div>
+          <h4>Trafic &amp; performances</h4>
+        </div>
+        <ul>
+          <li>Piloter les performances avec le back-office WordPress &amp; Google Analytics</li>
+          <li>Introduction au r&eacute;f&eacute;rencement naturel (SEO)</li>
+          <li>Introduction au r&eacute;f&eacute;rencement payant (SEA)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPETENCES -->
+  <div class="lp-section">
+    <div class="lp-section-title">
+      <div class="lp-line"></div>
+      <h2>Comp&eacute;tences vis&eacute;es par la certification</h2>
+      <p>Les savoir-faire que vous serez en mesure de d&eacute;montrer</p>
+    </div>
+
+    <div class="lp-comp-list">
+      <div class="lp-comp-item">
+        <div class="lp-comp-check">&#10003;</div>
+        <p><strong>D&eacute;finir le cahier des charges</strong> &mdash; en fonction des caract&eacute;ristiques de l&rsquo;entreprise, de son environnement et de ses ressources.</p>
+      </div>
+      <div class="lp-comp-item">
+        <div class="lp-comp-check">&#10003;</div>
+        <p><strong>Configurer son CMS, nom de domaine &amp; h&eacute;bergement</strong> &mdash; choisir et param&eacute;trer les fondations techniques du site.</p>
+      </div>
+      <div class="lp-comp-item">
+        <div class="lp-comp-check">&#10003;</div>
+        <p><strong>Construire la structure et les pages</strong> &mdash; d&eacute;finir la navigation et cr&eacute;er l&rsquo;arborescence compl&egrave;te du site.</p>
+      </div>
+      <div class="lp-comp-item">
+        <div class="lp-comp-check">&#10003;</div>
+        <p><strong>Int&eacute;grer les contenus</strong> &mdash; choisir et int&eacute;grer textes, images et vid&eacute;os en fonction de l&rsquo;actualit&eacute; de l&rsquo;entreprise.</p>
+      </div>
+      <div class="lp-comp-item">
+        <div class="lp-comp-check">&#10003;</div>
+        <p><strong>Mettre en place la relation client</strong> &mdash; formulaires de contact, liens r&eacute;seaux sociaux, mentions l&eacute;gales.</p>
+      </div>
+      <div class="lp-comp-item">
+        <div class="lp-comp-check">&#10003;</div>
+        <p><strong>Int&eacute;grer le e-commerce</strong> &mdash; ajouter un module de boutique en ligne (WooCommerce).</p>
+      </div>
+      <div class="lp-comp-item">
+        <div class="lp-comp-check">&#10003;</div>
+        <p><strong>Piloter et analyser</strong> &mdash; suivre les performances via le back-office et un outil analytique.</p>
+      </div>
+      <div class="lp-comp-item">
+        <div class="lp-comp-check">&#10003;</div>
+        <p><strong>R&eacute;f&eacute;rencer son site</strong> &mdash; utiliser les outils de r&eacute;f&eacute;rencement pour am&eacute;liorer la visibilit&eacute;.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- EVALUATION -->
+  <div class="lp-section" style="padding-top: 0;">
+    <div class="lp-eval-box">
+      <div class="lp-eval-icon">&#128221;</div>
+      <h3>Modalit&eacute;s d&rsquo;&eacute;valuation</h3>
+      <p>
+        <strong>QCM</strong> portant sur les technicités de la cr&eacute;ation d&rsquo;un site internet d&rsquo;entreprise,
+        suivi d&rsquo;une <strong>soutenance orale devant un jury professionnel</strong>&nbsp;:
+        20&nbsp;min de pr&eacute;sentation + 10&nbsp;min de questions/r&eacute;ponses.
+      </p>
+    </div>
+  </div>
+
+  <!-- POINTS FORTS -->
+  <div class="lp-section" style="padding-top: 0;">
+    <div class="lp-section-title">
+      <div class="lp-line"></div>
+      <h2>Les points forts</h2>
+    </div>
+    <div class="lp-strong-grid">
+      <div class="lp-strong-card">
+        <div class="lp-strong-icon">&#128187;</div>
+        <h4>Expert d&eacute;di&eacute;</h4>
+        <p>Accompagn&eacute; par un v&eacute;ritable expert pour obtenir un site &agrave; votre image.</p>
+      </div>
+      <div class="lp-strong-card">
+        <div class="lp-strong-icon">&#127919;</div>
+        <h4>Autonomie totale</h4>
+        <p>Vous g&eacute;rez votre site vous-m&ecirc;me, sans intervention externe.</p>
+      </div>
+      <div class="lp-strong-card">
+        <div class="lp-strong-icon">&#128200;</div>
+        <h4>Marketing int&eacute;gr&eacute;</h4>
+        <p>D&eacute;veloppez votre visibilit&eacute; et attirez plus de clients en ligne.</p>
+      </div>
+      <div class="lp-strong-card">
+        <div class="lp-strong-icon">&#9989;</div>
+        <h4>Parcours certifiant</h4>
+        <p>Certification RS6685 reconnue par France Comp&eacute;tences.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- CTA -->
+  <div class="lp-cta">
+    <h2>Pr&ecirc;t &agrave; cr&eacute;er votre site professionnel&nbsp;?</h2>
+    <p>
+      Lancez votre pr&eacute;sence en ligne et prenez la main sur votre communication digitale
+      gr&acirc;ce &agrave; un accompagnement sur-mesure.
+    </p>
+    <a href="https://www.moncompteformation.gouv.fr/espace-prive/html/#/formation/recherche/95368272100014_certif4/95368272100014_certif4?contexteFormation=ACTIVITE_PROFESSIONNELLE" target="_blank" rel="noopener noreferrer" class="lp-cta-btn">Je m&rsquo;inscris &agrave; la formation</a>
+    <div class="lp-parcours-tag">Parcours mixte : individualis&eacute; et modularis&eacute;</div>
+  </div>
+
+</div>
