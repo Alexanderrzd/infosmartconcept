@@ -160,6 +160,48 @@
     margin: 0 auto;
   }
 
+  /* ── PREREQUIS ── */
+  .lp-prereq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 24px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .lp-prereq-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #2563eb;
+    border-radius: 14px;
+    padding: 28px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .lp-prereq-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(37, 99, 235, 0.1);
+  }
+
+  .lp-prereq-icon {
+    font-size: 32px;
+    margin-bottom: 14px;
+  }
+
+  .lp-prereq-card h4 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+
+  .lp-prereq-card p {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.6;
+  }
+
   /* ── OBJECTIFS GRID ── */
   .lp-obj-grid {
     display: grid;
@@ -498,7 +540,7 @@
 
   <!-- ════════ HERO ════════ -->
   <div class="lp-hero">
-    <div class="lp-badge">Formation certifiante RS7005</div>
+    <div class="lp-badge">Formation certifiante <a href="https://www.francecompetences.fr/recherche/rs/7005/" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">RS7005</a></div>
     <h1>Conduire un projet de cr&eacute;ation<br>de micro-entreprise</h1>
     <p class="lp-hero-sub">
       De l&rsquo;id&eacute;e au lancement : ma&icirc;trisez toutes les &eacute;tapes pour cr&eacute;er,
@@ -515,18 +557,39 @@
   <div class="lp-certif-banner">
     <div class="lp-certif-icon">&#127891;</div>
     <div>
-      <h3>Certification reconnue &mdash; RS7005 Cr&eacute;Actifs</h3>
+      <h3>Certification reconnue &mdash; <a href="https://www.francecompetences.fr/recherche/rs/7005/" target="_blank" rel="noopener noreferrer" style="color:#2563eb;text-decoration:underline;">RS7005</a> <a href="https://creactifs.com/" target="_blank" rel="noopener noreferrer" style="color:#2563eb;text-decoration:underline;">Cr&eacute;Actifs</a></h3>
       <p>
         Cette formation vous pr&eacute;pare &agrave; la certification
         &laquo;&nbsp;Conduire un projet de cr&eacute;ation de micro-entreprise&nbsp;&raquo;
-        enregistr&eacute;e au R&eacute;pertoire Sp&eacute;cifique (RS7005)
-        et d&eacute;livr&eacute;e par Cr&eacute;Actifs.
+        enregistr&eacute;e au R&eacute;pertoire Sp&eacute;cifique (<a href="https://www.francecompetences.fr/recherche/rs/7005/" target="_blank" rel="noopener noreferrer" style="color:#2563eb;text-decoration:underline;font-weight:600;">RS7005</a>)
+        et d&eacute;livr&eacute;e par <a href="https://creactifs.com/" target="_blank" rel="noopener noreferrer" style="color:#2563eb;text-decoration:underline;font-weight:600;">Cr&eacute;Actifs</a>.
       </p>
     </div>
   </div>
 
-  <!-- ════════ OBJECTIFS PEDAGOGIQUES ════════ -->
+  <!-- ════════ PREREQUIS ════════ -->
   <div class="lp-section">
+    <div class="lp-section-title">
+      <div class="lp-line"></div>
+      <h2>Pr&eacute;requis</h2>
+      <p>Les conditions n&eacute;cessaires pour suivre la formation dans les meilleures conditions</p>
+    </div>
+    <div class="lp-prereq-grid">
+      <div class="lp-prereq-card">
+        <div class="lp-prereq-icon">&#128187;</div>
+        <h4>Bonne connaissance des outils bureautiques</h4>
+        <p>Traitement de texte, navigation internet et tableur.</p>
+      </div>
+      <div class="lp-prereq-card">
+        <div class="lp-prereq-icon">&#128421;</div>
+        <h4>&Eacute;quipement informatique</h4>
+        <p>Vous devez disposer d&rsquo;un ordinateur (PC ou Mac) et d&rsquo;une connexion Internet haut-d&eacute;bit.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- ════════ OBJECTIFS PEDAGOGIQUES ════════ -->
+  <div class="lp-section" style="padding-top: 0;">
     <div class="lp-section-title">
       <div class="lp-line"></div>
       <h2>Objectifs p&eacute;dagogiques</h2>
@@ -757,7 +820,7 @@
       <div class="lp-strong-card">
         <div class="lp-strong-icon">&#9989;</div>
         <h4>Parcours certifiant</h4>
-        <p>Conforme aux exigences de la certification RS7005 &mdash; Cr&eacute;Actifs.</p>
+        <p>Conforme aux exigences de la certification <a href="https://www.francecompetences.fr/recherche/rs/7005/" target="_blank" rel="noopener noreferrer" style="color:#2563eb;text-decoration:underline;font-weight:600;">RS7005</a> &mdash; <a href="https://creactifs.com/" target="_blank" rel="noopener noreferrer" style="color:#2563eb;text-decoration:underline;font-weight:600;">Cr&eacute;Actifs</a>.</p>
       </div>
     </div>
   </div>
