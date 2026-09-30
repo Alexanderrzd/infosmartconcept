@@ -435,6 +435,79 @@
     font-weight: 500;
   }
 
+  /* ── PUBLIC CIBLE ── */
+  .lp-public-box {
+    background: linear-gradient(135deg, #ecfdf5, #d1fae5);
+    border: 1px solid #a7f3d0;
+    border-left: 5px solid #059669;
+    border-radius: 0 14px 14px 0;
+    padding: 32px 36px;
+    max-width: 820px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .lp-public-icon {
+    font-size: 40px;
+    flex-shrink: 0;
+  }
+
+  .lp-public-box p {
+    font-size: 17px;
+    line-height: 1.6;
+    color: #064e3b;
+    font-weight: 500;
+  }
+
+  .lp-public-box strong {
+    color: #059669;
+    font-weight: 700;
+  }
+
+  /* ── PREREQUIS ── */
+  .lp-prereq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
+    gap: 24px;
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  .lp-prereq-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-left: 4px solid #059669;
+    border-radius: 14px;
+    padding: 28px;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+
+  .lp-prereq-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(5, 150, 105, 0.1);
+  }
+
+  .lp-prereq-icon {
+    font-size: 32px;
+    margin-bottom: 14px;
+  }
+
+  .lp-prereq-card h4 {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1e293b;
+    line-height: 1.4;
+    margin-bottom: 8px;
+  }
+
+  .lp-prereq-card p {
+    font-size: 14px;
+    color: #64748b;
+    line-height: 1.6;
+  }
+
   @media (max-width: 768px) {
     .lp-hero { padding: 50px 24px; }
     .lp-hero h1 { font-size: 28px; }
@@ -466,7 +539,7 @@
 
   <!-- HERO -->
   <div class="lp-hero">
-    <div class="lp-badge">Formation certifiante RS7004</div>
+    <div class="lp-badge">Formation certifiante <a href="https://www.francecompetences.fr/recherche/rs/7004/" target="_blank" rel="noopener noreferrer" style="color:inherit;text-decoration:underline;">RS7004</a></div>
     <h1>Conduire un projet de<br>cr&eacute;ation d&rsquo;entreprise</h1>
     <p class="lp-hero-sub">
       Structurez, validez et lancez votre entreprise en toute s&eacute;curit&eacute;.
@@ -474,7 +547,7 @@
     </p>
     <div class="lp-hero-tags">
       <span class="lp-hero-tag">Parcours modularis&eacute;</span>
-      <span class="lp-hero-tag">Certification RS7004</span>
+      <span class="lp-hero-tag">Certification RS7004 Cr&eacute;Actifs</span>
       <span class="lp-hero-tag">&Eacute;ligible CPF</span>
       <span class="lp-hero-tag">Qualiopi</span>
     </div>
@@ -484,18 +557,58 @@
   <div class="lp-certif-banner">
     <div class="lp-certif-icon">&#127891;</div>
     <div>
-      <h3>Certification reconnue &mdash; RS7004</h3>
+      <h3>Certification reconnue &mdash; <a href="https://www.francecompetences.fr/recherche/rs/7004/" target="_blank" rel="noopener noreferrer" style="color:#059669;text-decoration:underline;">RS7004</a> <a href="https://creactifs.com/" target="_blank" rel="noopener noreferrer" style="color:#059669;text-decoration:underline;">Cr&eacute;Actifs</a></h3>
       <p>
         Cette formation pr&eacute;pare &agrave; la certification
         &laquo;&nbsp;Conduire un projet de cr&eacute;ation d&rsquo;entreprise&nbsp;&raquo;
-        enregistr&eacute;e au R&eacute;pertoire Sp&eacute;cifique (RS7004).
+        enregistr&eacute;e au R&eacute;pertoire Sp&eacute;cifique (<a href="https://www.francecompetences.fr/recherche/rs/7004/" target="_blank" rel="noopener noreferrer" style="color:#059669;text-decoration:underline;font-weight:600;">RS7004</a>)
+        et d&eacute;livr&eacute;e par <a href="https://creactifs.com/" target="_blank" rel="noopener noreferrer" style="color:#059669;text-decoration:underline;font-weight:600;">Cr&eacute;Actifs</a>.
         Validation par soutenance orale devant un jury d&rsquo;&eacute;valuation sur la base d&rsquo;un dossier professionnel complet.
       </p>
     </div>
   </div>
 
-  <!-- OBJECTIFS PEDAGOGIQUES -->
+  <!-- PUBLIC CIBLE -->
   <div class="lp-section">
+    <div class="lp-section-title">
+      <div class="lp-line"></div>
+      <h2>Public cible</h2>
+      <p>&Agrave; qui s&rsquo;adresse cette formation</p>
+    </div>
+    <div class="lp-public-box">
+      <div class="lp-public-icon">&#128101;</div>
+      <p>Tout public ayant un <strong>projet de cr&eacute;ation d&rsquo;entreprise</strong>.</p>
+    </div>
+  </div>
+
+  <!-- PREREQUIS -->
+  <div class="lp-section" style="padding-top: 0;">
+    <div class="lp-section-title">
+      <div class="lp-line"></div>
+      <h2>Pr&eacute;requis</h2>
+      <p>Les conditions n&eacute;cessaires pour suivre la formation dans les meilleures conditions</p>
+    </div>
+    <div class="lp-prereq-grid">
+      <div class="lp-prereq-card">
+        <div class="lp-prereq-icon">&#128187;</div>
+        <h4>Ma&icirc;trise des outils bureautiques</h4>
+        <p>Traitement de texte, traitement des images, navigation internet, tableur.</p>
+      </div>
+      <div class="lp-prereq-card">
+        <div class="lp-prereq-icon">&#9997;&#65039;</div>
+        <h4>Aisance r&eacute;dactionnelle et chiffr&eacute;e</h4>
+        <p>Aisance dans le r&eacute;dactionnel et le traitement de donn&eacute;es chiffr&eacute;es.</p>
+      </div>
+      <div class="lp-prereq-card">
+        <div class="lp-prereq-icon">&#128421;</div>
+        <h4>&Eacute;quipement informatique</h4>
+        <p>Disposer d&rsquo;un ordinateur (PC ou Mac) et d&rsquo;une connexion Internet haut-d&eacute;bit.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- OBJECTIFS PEDAGOGIQUES -->
+  <div class="lp-section" style="padding-top: 0;">
     <div class="lp-section-title">
       <div class="lp-line"></div>
       <h2>Objectifs p&eacute;dagogiques</h2>
